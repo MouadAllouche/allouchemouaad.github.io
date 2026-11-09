@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Mouaad Allouche, full-stack developer and cybersecurity student</title>
+  <meta name="description" content="Portfolio of Mouaad Allouche, a full-stack developer and cybersecurity engineering student in Constantine, Algeria. Projects, experience, competitions, and contact.">
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV,SHRP@200..500,0,0..100&display=swap">
+  <style>
+/* Hallmark · shape: Scan Ledger (draw 3d4950, Feature Stack adapted: no captures available, kept all content as a measured index/ledger) · genre: modern-minimal · theme: Vantage (by request) · redesign: full
+ * hero: Stage · nav: edge bar with contact action · footer: statement · imagery: none (generated point-sweep canvas signature, no photos/captures fabricated) · signature: a restrained point field with a passing sweep behind the hero head, Vantage material, no lines or glow · vantage: object/steel
+ * axes: dark/grotesk-sans/chromatic-lime · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V4 · weakest: E, canvas signature and full content ledger on one page; kept motion reduced-motion safe and all project/experience facts intact */
+@import url("./tokens.css");
+@import url("./base.css");
+
+:root {
+  --banner-height: 72px;
+  --font-body: "Geologica", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Geologica", ui-sans-serif, system-ui, sans-serif;
+  --font-outlier: "Geologica", ui-sans-serif, system-ui, sans-serif;
+  --color-slot: var(--color-paper-3);
+  --radius-input: 4px;
+}
+:root[data-theme="light"] {
+  --color-paper: oklch(96.5% 0.008 230);
+  --color-paper-2: oklch(93% 0.01 230);
+  --color-paper-3: oklch(89% 0.012 230);
+  --color-ink: oklch(20% 0.016 235);
+  --color-ink-2: oklch(32% 0.016 235);
+  --color-muted: oklch(48% 0.014 235);
+  --color-rule: oklch(82% 0.01 230);
+  --color-rule-2: oklch(72% 0.012 230);
+  --color-accent: oklch(46% 0.15 126);
+  --color-accent-hi: oklch(42% 0.16 126);
+  --color-accent-ink: oklch(98% 0.008 126);
+  --color-focus: oklch(46% 0.15 126);
+  --point-lo: oklch(72% 0.03 245);
+  --point-mid: oklch(52% 0.04 232);
+  --point-hi: oklch(24% 0.03 215);
+  --color-ok: oklch(52% 0.14 155);
+  --color-gold: oklch(72% 0.14 85);
+  --color-gold-ink: oklch(22% 0.03 70);
+}
+
+html, body { overflow-x: clip; }
+body { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-weight: 300; font-variation-settings: "SHRP" 0; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 300; font-variation-settings: "SHRP" 100; letter-spacing: -0.035em; line-height: 1; margin: 0; }
+h3 { font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; }
+a { color: inherit; text-decoration-color: color-mix(in oklab, var(--color-accent) 55%, transparent); text-underline-offset: 0.18em; }
+a:hover { text-decoration-color: var(--color-accent); }
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+
+.skip { position: absolute; left: var(--space-md); top: calc(-1 * var(--space-4xl)); z-index: var(--z-toast); padding: var(--space-xs) var(--space-md); background: var(--color-accent); color: var(--color-accent-ink); border-radius: var(--radius-pill); text-decoration: none; }
+.skip:focus-visible { top: var(--space-sm); }
+
+.site-header { position: sticky; top: 0; z-index: var(--z-sticky-nav); background: color-mix(in oklab, var(--color-paper) 88%, transparent); backdrop-filter: blur(10px); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.bar { min-height: var(--banner-height); display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); }
+.wordmark { font-weight: 400; font-variation-settings: "SHRP" 100; font-size: 1.125rem; letter-spacing: -0.02em; text-decoration: none; white-space: nowrap; }
+.bar-right { display: flex; align-items: center; gap: var(--space-sm) var(--space-md); flex-wrap: wrap; justify-content: flex-end; }
+.nav-links { display: flex; flex-wrap: wrap; gap: 0 var(--space-md); list-style: none; margin: 0; padding: 0; }
+.nav-links a { display: inline-block; padding: var(--space-xs) 0; font-size: var(--text-sm); color: var(--color-muted); text-decoration: none; }
+.nav-links a:hover { color: var(--color-ink); }
+@media (max-width: 72rem) { .nav-links { display: none; } }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 var(--space-lg); border: 0; border-radius: var(--radius-pill); background: var(--color-accent); color: var(--color-accent-ink); font: 400 var(--text-md)/1 var(--font-body); font-variation-settings: "SHRP" 0; text-decoration: none; white-space: nowrap; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+.btn:hover { background: var(--color-accent-hi); }
+.btn:active { transform: translateY(1px); }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; }
+.btn-line { background: transparent; color: var(--color-ink); box-shadow: inset 0 0 0 var(--rule-hair) var(--color-rule-2); }
+.btn-line:hover { background: var(--color-paper-2); }
+.btn-quiet { min-height: 40px; padding: 0 var(--space-md); font-size: var(--text-sm); background: transparent; color: var(--color-muted); box-shadow: inset 0 0 0 var(--rule-hair) var(--color-rule); }
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); align-items: center; }
+
+.hero { position: relative; min-height: calc(100svh - var(--banner-height)); display: grid; align-items: center; border-bottom: var(--rule-hair) solid var(--color-rule); }
+#scan-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.9; }
+.hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap-columns); align-items: end; padding-block: var(--space-3xl) var(--space-2xl); }
+@media (max-width: 60rem) { .hero { min-height: auto; } .hero-inner { grid-template-columns: minmax(0, 1fr); padding-block: var(--space-2xl); } }
+.status { display: inline-flex; align-items: center; gap: var(--space-xs); margin: 0 0 var(--space-md); font-size: var(--text-sm); color: var(--color-muted); font-variant-numeric: tabular-nums; }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--color-accent); flex: none; }
+h1 { font-size: clamp(2.8rem, 5.6vw, 5.25rem); max-width: 11ch; }
+.hero-copy { display: grid; gap: var(--space-lg); align-content: end; }
+.lead { margin: 0; font-size: var(--text-lead); line-height: 1.45; color: var(--color-ink-2); max-width: 40ch; }
+.hero-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-md); align-self: end; }
+@media (max-width: 40rem) { .hero-metrics { grid-template-columns: minmax(0, 1fr); } }
+.metric { padding-top: var(--space-sm); border-top: var(--rule-hair) solid var(--color-rule-2); }
+.metric b { display: block; font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 200; font-variation-settings: "SHRP" 100; font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }
+.metric span { color: var(--color-muted); font-size: var(--text-sm); }
+.num { font-variant-numeric: tabular-nums; font-weight: 400; }
+
+section { padding-block: var(--section-gap-s); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.head { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--gap-columns); margin-bottom: var(--space-2xl); align-items: start; }
+@media (max-width: 60rem) { .head { grid-template-columns: minmax(0, 1fr); gap: var(--space-md); } }
+h2 { font-size: clamp(2rem, 3.2vw, var(--text-section)); max-width: 14ch; }
+.head p { margin: 0; color: var(--color-ink-2); font-size: var(--text-lead); max-width: 52ch; }
+
+.ticks { position: relative; }
+.ticks::before { content: ""; position: absolute; inset: 0; pointer-events: none; border: var(--rule-hair) solid var(--color-rule-2); -webkit-mask: conic-gradient(at var(--tick) var(--tick), transparent 75%, var(--color-ink) 0) 0 0 / calc(100% - var(--tick)) calc(100% - var(--tick)); mask: conic-gradient(at var(--tick) var(--tick), transparent 75%, var(--color-ink) 0) 0 0 / calc(100% - var(--tick)) calc(100% - var(--tick)); }
+
+.ledger { border-top: var(--rule-hair) solid var(--color-rule); }
+.ledger-row { display: grid; grid-template-columns: minmax(0, 72px) minmax(0, 4fr) minmax(0, 7fr) auto; gap: var(--space-sm) var(--gap-columns); padding: var(--space-lg) 0; border-bottom: var(--rule-hair) solid var(--color-rule); align-items: start; }
+.ledger-row.case { background: color-mix(in oklab, var(--color-paper-2) 55%, transparent); margin-inline: calc(-1 * var(--space-md)); padding-inline: var(--space-md); }
+.ledger-row[hidden] { display: none; }
+@media (max-width: 72rem) { .ledger-row { grid-template-columns: minmax(0, 1fr); gap: var(--space-xs); } .ledger-row.case { margin-inline: 0; padding-inline: 0; background: transparent; } }
+.row-signal { display: flex; align-items: center; gap: var(--space-xs); font-size: var(--text-sm); color: var(--color-muted); font-variant-numeric: tabular-nums; padding-top: var(--space-3xs); }
+.live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); }
+.ledger h3 { font-size: var(--text-title); margin: 0 0 var(--space-xs); max-width: 28ch; }
+.ledger p { margin: 0; color: var(--color-ink-2); max-width: 62ch; }
+.meta { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-sm); align-items: center; font-size: var(--text-sm); color: var(--color-muted); margin-bottom: var(--space-xs); }
+.badge { display: inline-flex; align-items: center; min-height: 24px; padding: 0 var(--space-sm); border-radius: var(--radius-pill); font: 400 var(--text-sm)/1 var(--font-body); box-shadow: inset 0 0 0 var(--rule-hair) var(--color-rule-2); color: var(--color-ink-2); }
+.badge.accent { background: color-mix(in oklab, var(--color-accent) 14%, transparent); color: var(--color-accent); box-shadow: inset 0 0 0 var(--rule-hair) color-mix(in oklab, var(--color-accent) 35%, transparent); }
+.badge.gold { background: color-mix(in oklab, var(--color-gold) 16%, transparent); color: var(--color-gold); box-shadow: inset 0 0 0 var(--rule-hair) color-mix(in oklab, var(--color-gold) 35%, transparent); }
+.tags { display: flex; flex-wrap: wrap; gap: var(--space-xs); list-style: none; margin: var(--space-sm) 0 0; padding: 0; }
+.tags li { font: 400 0.8125rem/1.2 var(--font-body); font-variant-numeric: tabular-nums; color: var(--color-muted); padding: var(--space-2xs) var(--space-sm); border-radius: var(--radius-pill); box-shadow: inset 0 0 0 var(--rule-hair) var(--color-rule); }
+.links-inline { display: flex; flex-wrap: wrap; gap: var(--space-sm) var(--space-md); margin-top: var(--space-sm); font-size: var(--text-sm); }
+
+.filters { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: var(--space-sm); }
+.chip { min-height: 40px; padding: 0 var(--space-md); border: 0; border-radius: var(--radius-pill); background: transparent; color: var(--color-muted); font: 400 var(--text-sm)/1 var(--font-body); cursor: pointer; box-shadow: inset 0 0 0 var(--rule-hair) var(--color-rule); transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out); }
+.chip:hover { background: var(--color-paper-2); color: var(--color-ink); }
+.chip[aria-pressed="true"] { background: var(--color-accent); color: var(--color-accent-ink); box-shadow: none; }
+.count { margin: 0 0 var(--space-md); font-size: var(--text-sm); color: var(--color-muted); font-variant-numeric: tabular-nums; }
+
+.split-block { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap-columns); align-items: start; }
+@media (max-width: 60rem) { .split-block { grid-template-columns: minmax(0, 1fr); } }
+.prose { display: grid; gap: var(--space-md); max-width: 62ch; color: var(--color-ink-2); }
+.prose p { margin: 0; }
+.facts { display: grid; margin: var(--space-xl) 0 0; gap: 0; }
+.facts > div { display: grid; grid-template-columns: minmax(0, 180px) minmax(0, 1fr); gap: var(--space-sm); padding: var(--space-sm) 0; border-top: var(--rule-hair) solid var(--color-rule); }
+@media (max-width: 40rem) { .facts > div { grid-template-columns: minmax(0, 1fr); gap: 0; } }
+.facts dt { font-size: var(--text-sm); color: var(--color-muted); }
+.facts dd { margin: 0; }
+
+.log { border-top: var(--rule-hair) solid var(--color-rule); }
+.log-row { display: grid; grid-template-columns: minmax(0, 180px) minmax(0, 1fr); gap: var(--space-sm) var(--gap-columns); padding: var(--space-lg) 0; border-bottom: var(--rule-hair) solid var(--color-rule); align-items: start; }
+@media (max-width: 60rem) { .log-row { grid-template-columns: minmax(0, 1fr); gap: var(--space-xs); } }
+.log-date { font-size: var(--text-sm); color: var(--color-muted); font-variant-numeric: tabular-nums; padding-top: var(--space-3xs); }
+.log h3 { font-size: var(--text-title); margin: 0 0 var(--space-3xs); }
+.log .org { margin: 0 0 var(--space-sm); color: var(--color-muted); }
+.log ul { margin: 0; padding-left: 1.1rem; color: var(--color-ink-2); }
+.log li + li { margin-top: var(--space-2xs); }
+.log p { margin: 0; color: var(--color-ink-2); max-width: 62ch; }
+
+.skill-groups { display: grid; gap: 0; border-top: var(--rule-hair) solid var(--color-rule); }
+.skill-group { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: var(--space-sm) var(--gap-columns); padding: var(--space-md) 0; border-bottom: var(--rule-hair) solid var(--color-rule); align-items: start; }
+@media (max-width: 60rem) { .skill-group { grid-template-columns: minmax(0, 1fr); } }
+.skill-group h3 { font-family: var(--font-body); font-size: var(--text-md); font-weight: 400; margin: 0; letter-spacing: 0; font-variation-settings: "SHRP" 0; padding-top: var(--space-3xs); }
+
+.edu { display: grid; gap: var(--gap-columns); grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 60rem) { .edu { grid-template-columns: minmax(0, 1fr); } }
+.panel { padding: var(--space-lg); background: var(--color-paper-2); border-radius: var(--radius-card); }
+.panel h3 { font-size: var(--text-title); margin: 0 0 var(--space-xs); }
+.panel p { margin: 0 0 var(--space-2xs); color: var(--color-ink-2); }
+.langs { display: grid; gap: 0; margin: 0; }
+.langs div { display: flex; justify-content: space-between; gap: var(--space-md); padding: var(--space-2xs) 0; border-top: var(--rule-hair) solid var(--color-rule); }
+.langs div:first-child { border-top: 0; padding-top: 0; }
+.langs dt { font-weight: 400; }
+.langs dd { margin: 0; color: var(--color-muted); }
+
+.contact-close { border-bottom: 0; }
+.contact-layout { display: grid; gap: var(--gap-columns); grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; }
+@media (max-width: 60rem) { .contact-layout { grid-template-columns: minmax(0, 1fr); } }
+.reach { display: grid; margin: 0; }
+.reach > div { display: grid; grid-template-columns: 96px minmax(0, 1fr) auto; gap: var(--space-xs) var(--space-sm); align-items: center; padding: var(--space-md) 0; border-top: var(--rule-hair) solid var(--color-rule); }
+@media (max-width: 30rem) { .reach > div { grid-template-columns: minmax(0, 1fr) auto; } .reach dt { grid-column: 1 / -1; } }
+.reach dt { font-size: var(--text-sm); color: var(--color-muted); }
+.reach dd { margin: 0; overflow-wrap: anywhere; }
+
+footer { padding: var(--space-2xl) 0 calc(var(--space-2xl) + env(safe-area-inset-bottom, 0px)); }
+.statement { border-top: var(--rule-hair) solid var(--color-rule); padding-top: var(--space-xl); display: grid; gap: var(--space-lg); grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: end; }
+@media (max-width: 60rem) { .statement { grid-template-columns: minmax(0, 1fr); } }
+.statement p { margin: 0; }
+.statement .big { font-size: clamp(1.5rem, 2.6vw, 2.25rem); font-weight: 300; font-variation-settings: "SHRP" 100; letter-spacing: -0.03em; line-height: 1.1; max-width: 20ch; }
+.statement .small { color: var(--color-muted); font-size: var(--text-sm); }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, .chip { transition: none; }
+}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container bar">
+      <a class="wordmark" href="#top">Mouaad Allouche</a>
+      <div class="bar-right">
+        <nav aria-label="Sections">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#competitions">Competitions</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="btn btn-quiet" id="theme" type="button">Light mode</button>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-label="Introduction">
+      <canvas id="scan-canvas" aria-hidden="true"></canvas>
+      <div class="container hero-inner">
+        <div>
+          <p class="status"><span class="status-dot" aria-hidden="true"></span><span class="num">Constantine, Algeria</span></p>
+          <h1>Full-stack work, measured for security.</h1>
+        </div>
+        <div class="hero-copy">
+          <p class="lead">I am Mouaad Allouche. I build web and mobile products with React, Next.js and Node.js while studying cybersecurity engineering at ESI Sidi Bel Abbès and leading the technical team at Ingeniums Club.</p>
+          <div class="actions">
+            <a class="btn" href="#projects">See projects</a>
+            <a class="btn btn-line" href="#contact">Get in touch</a>
+          </div>
+          <div class="hero-metrics" aria-label="Summary">
+            <div class="metric"><b class="num">9</b><span>projects in this record</span></div>
+            <div class="metric"><b class="num">2028</b><span>expected graduation year</span></div>
+            <div class="metric"><b class="num">4</b><span>languages spoken</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="head">
+          <h2>About</h2>
+          <p>I build the interface, the API and the data layer, then check the parts that can fail.</p>
+        </div>
+        <div class="split-block">
+          <div class="prose">
+            <p>JavaScript and TypeScript are my main tools: React and Next.js on the front end, Node.js and Express with PostgreSQL or MongoDB behind them, and React Native when an app needs to be mobile.</p>
+            <p>Studying cybersecurity engineering changes how I build. I think about authentication, data exposure and monitoring from the first commit. Outside class I play CTFs, lead the technical team at Ingeniums Club and make tech content on social media.</p>
+          </div>
+          <div>
+            <div class="ticks" style="padding: var(--space-lg);">
+              <p style="margin:0 0 var(--space-xs); font-size:var(--text-sm); color:var(--color-muted);">What I do</p>
+              <p style="margin:0; color:var(--color-ink-2); max-width:62ch;">Full-stack web apps, admin dashboards, mobile apps with React Native, and security-minded features such as authentication, access control and monitoring.</p>
+            </div>
+            <dl class="facts">
+              <div><dt>Based in</dt><dd>Constantine, Algeria</dd></div>
+              <div><dt>Studying</dt><dd>Cybersecurity engineering, ESI Sidi Bel Abbès (2028)</dd></div>
+              <div><dt>Leading</dt><dd>Technical team, Ingeniums Club</dd></div>
+              <div><dt>Available for</dt><dd>Remote freelance work, remote jobs, internships</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="head">
+          <h2>Projects</h2>
+          <p>Products I have built or am building, listed with their stack and role.</p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip" type="button" data-filter="full" aria-pressed="false">Full-stack</button>
+          <button class="chip" type="button" data-filter="frontend" aria-pressed="false">Front end</button>
+          <button class="chip" type="button" data-filter="security" aria-pressed="false">Security</button>
+          <button class="chip" type="button" data-filter="dev" aria-pressed="false">In development</button>
+        </div>
+        <p class="count" id="count" aria-live="polite">Showing 9 of 9 projects</p>
+
+        <div class="ledger" id="project-grid">
+          <article class="ledger-row case" data-tags="full">
+            <div class="row-signal"><span class="live-dot" aria-hidden="true"></span><span class="num">Live</span></div>
+            <div>
+              <h3>PC Store, full-stack e-commerce platform</h3>
+              <div class="meta"><span class="badge accent">Live</span><span>Full-stack developer</span></div>
+              <div class="links-inline"><a href="https://pcfront-s6yz.vercel.app/" target="_blank" rel="noopener">Open the store</a><a href="https://pcfront-s6yz.vercel.app/admin" target="_blank" rel="noopener">Open the admin panel</a></div>
+            </div>
+            <div>
+              <p>A responsive storefront with product search, filters, cart and checkout, plus an admin panel for products, stock, orders, delivery, and sales and purchase tracking.</p>
+              <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>Express.js</li><li>PostgreSQL</li><li>Prisma</li><li>JWT</li></ul>
+            </div>
+            <div></div>
+          </article>
+
+          <article class="ledger-row" data-tags="frontend">
+            <div class="row-signal num">2025</div>
+            <div>
+              <h3>AI-powered student life management app</h3>
+              <div class="meta"><span class="badge gold">3rd place, DevFest 2025</span><span>Front-end developer, team of several</span></div>
+            </div>
+            <div>
+              <p>A platform that gives university students their lectures, study materials, assignments and schedules in one place, with an AI chatbot and a time-management system. I built the admin dashboard and the student mobile app.</p>
+              <ul class="tags"><li>Next.js</li><li>React Native</li><li>WebView</li><li>TypeScript</li><li>OpenAI API</li><li>MongoDB</li><li>Django</li></ul>
+            </div>
+            <div></div>
+          </article>
+
+          <article class="ledger-row" data-tags="frontend security">
+            <div class="row-signal"></div>
+            <div>
+              <h3>Doctoral examination management platform</h3>
+              <div class="meta"><span>Front-end developer, team project</span></div>
+            </div>
+            <div>
+              <p>An admin dashboard for running doctoral entrance exams across specialities, paired with an exam-day mobile app. QR codes and encrypted identifiers link candidates to papers for anonymous correction, and the codes change before marking to prevent tampering. I built the dashboard.</p>
+              <ul class="tags"><li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>REST API</li><li>QR codes</li></ul>
+            </div>
+            <div></div>
+          </article>
+
+          <article class="ledger-row" data-tags="frontend">
+            <div class="row-signal"></div>
+            <div>
+              <h3>Daycare management platform</h3>
+              <div class="meta"><span>Front-end developer, team project</span></div>
+            </div>
+            <div>
+              <p>A web dashboard for daycare administrators and a mobile app for parents, covering child profiles, daily reports, dietary needs, notes and announcements. I built the admin dashboard and the landing page, including 3D models.</p>
+              <ul class="tags"><li>React</li><li>Tailwind CSS</li><li>Express.js</li><li>MongoDB</li><li>Flutter</li></ul>
+            </div>
+            <div></div>
+          </article>
+
+          <article class="ledger-row" data-tags="full">
+            <div class="row-signal"></div>
+            <div>
+              <h3>Cloud file storage and sharing platform</h3>
+              <div class="meta"><span>Full-stack developer</span></div>
+            </div>
+            <div>
+              <p>A Drive-style app where users sign in securely, upload files, organize them in folders, download them and share them with other people.</p>
+              <ul class="tags"><li>React</li><li>Tailwind CSS</li><li>Node.js</li><li>Express.js</li><li>PostgreSQL</li></ul>
+            </div>
+            <div></div>
+          </article>
+
+          <article class="ledger-row" data-tags="full">
+            <div class="row-signal"></div>
+            <div>
+              <h3>Blog and content sharing platform</h3>
+              <div class="meta"><span>Full-stack developer, solo project</span></div>
+            </div>
+            <div>
+              <p>A blogging platform with registration and login, where users publish and edit posts, comment on articles and save their favorites for later.</p>
+              <ul class="tags"><li>React</li><li>Tailwind CSS</li><li>Node.js</li><li>Express.js</li><li>PostgreSQL</li></ul>
+            </div>
+            <div></div>
+          </article>
+
+          <article class="ledger-row" data-tags="full">
+            <div class="row-signal"></div>
+            <div>
+              <h3>Anime community blog</h3>
+              <div class="meta"><span>Full-stack developer, solo project</span></div>
+            </div>
+            <div>
+              <p>A blog where fans read, comment and post using only a display name. I designed the identity logic so people who share a name stay correctly attributed without accounts.</p>
+              <ul class="tags"><li>React</li><li>Tailwind CSS</li><li>Node.js</li><li>Express.js</li><li>PostgreSQL</li></ul>
+            </div>
+            <div></div>
+          </article>
+
+          <article class="ledger-row" data-tags="full dev">
+            <div class="row-signal num">Dev</div>
+            <div>
+              <h3>Travel agency platform</h3>
+              <div class="meta"><span class="badge">In development</span><span>Full-stack developer</span></div>
+            </div>
+            <div>
+              <p>A platform for planning trips and exploring destinations, built to bring a travel agency’s services and information together in one place.</p>
+              <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>Node.js</li><li>Express.js</li></ul>
+            </div>
+            <div></div>
+          </article>
+
+          <article class="ledger-row" data-tags="security dev">
+            <div class="row-signal num">Dev</div>
+            <div>
+              <h3>Server monitoring and attack detection tool</h3>
+              <div class="meta"><span class="badge">In development</span><span>Developer, security</span></div>
+            </div>
+            <div>
+              <p>A tool that watches full server activity, detects cyber attacks and responds to them. It puts what I am studying in cybersecurity into a working system.</p>
+            </div>
+            <div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="head">
+          <h2>Experience</h2>
+          <p>Client work, club leadership and community volunteering.</p>
+        </div>
+        <div class="log">
+          <article class="log-row">
+            <div class="log-date">2025 to present</div>
+            <div>
+              <h3>Technical Team Leader</h3>
+              <p class="org">Ingeniums Club, ESI Sidi Bel Abbès</p>
+              <ul>
+                <li>Lead the club’s technical team and plan its events, including CTF workshops and the MiniCTF in November 2026.</li>
+                <li>Helped organize ESI Showcase (2025), where seniors present their projects and advise new and junior students.</li>
+                <li>Helped organize InGeHack (2025), one of the biggest CTF competitions in Algeria, held in Algiers.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="log-row">
+            <div class="log-date">Sep 2024 to May 2025</div>
+            <div>
+              <h3>Volunteer, events and sponsorship</h3>
+              <p class="org">GDG SBA</p>
+              <ul><li>Helped run club events and find sponsors throughout the year.</li></ul>
+            </div>
+          </article>
+          <article class="log-row">
+            <div class="log-date">Dec 2023 to present</div>
+            <div>
+              <h3>Full Stack Developer</h3>
+              <p class="org">Khamsat (freelance)</p>
+              <ul><li>Build full-stack web apps for clients.</li></ul>
+            </div>
+          </article>
+          <article class="log-row">
+            <div class="log-date">Jun 2022 to Jan 2024</div>
+            <div>
+              <h3>Front-End Web Developer</h3>
+              <p class="org">Upwork (freelance)</p>
+              <ul><li>Built front-end websites for freelance clients.</li></ul>
+            </div>
+          </article>
+          <article class="log-row">
+            <div class="log-date">Apr 2022 to present</div>
+            <div>
+              <h3>Self-employed developer</h3>
+              <p class="org">Independent</p>
+              <ul><li>Build and ship something every day. Client work includes e-commerce stores and showcase websites.</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="competitions">
+      <div class="container">
+        <div class="head">
+          <h2>Competitions</h2>
+          <p>Hackathons in 2025 and solo CTFs listed on CTFtime.</p>
+        </div>
+        <div class="log">
+          <article class="log-row">
+            <div class="log-date"><span class="badge gold">3rd</span></div>
+            <div>
+              <h3>GDG DevFest Batna</h3>
+              <p class="org">2025, team entry</p>
+              <p>We built a mobile app and web dashboard that help students plan their time, with AI-generated plans, courses, notes and a chatbot.</p>
+            </div>
+          </article>
+          <article class="log-row">
+            <div class="log-date"><span class="badge gold">4th</span></div>
+            <div>
+              <h3>Expo Excel datathon, hosted by Yassir</h3>
+              <p class="org">2025, team entry</p>
+              <p>Our team finished fourth despite having no earlier experience in training AI models.</p>
+            </div>
+          </article>
+          <article class="log-row">
+            <div class="log-date"><span class="badge">Team entry</span></div>
+            <div>
+              <h3>Algérie 2.0 hackathon</h3>
+              <p class="org">2025, team entry</p>
+              <p>We built a B2B platform with an admin dashboard for web and mobile.</p>
+            </div>
+          </article>
+          <article class="log-row">
+            <div class="log-date"><span class="badge">Solo</span></div>
+            <div>
+              <h3>Capture the flag, solo</h3>
+              <p class="org">Events listed on CTFtime</p>
+              <p>I play online CTFs on my own and finish around 5th to 10th place.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="head">
+          <h2>Skills</h2>
+          <p>Tools and areas I use in shipped work and study.</p>
+        </div>
+        <div class="skill-groups">
+          <div class="skill-group"><h3>Front end</h3><ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>Tailwind CSS</li><li>Bootstrap</li><li>shadcn/ui</li><li>Vite</li></ul></div>
+          <div class="skill-group"><h3>Mobile and desktop</h3><ul class="tags"><li>React Native</li><li>Expo</li><li>Electron</li></ul></div>
+          <div class="skill-group"><h3>Back end</h3><ul class="tags"><li>Node.js</li><li>Express.js</li><li>REST APIs</li><li>Prisma</li><li>JWT</li><li>Python</li><li>PHP</li><li>Java</li><li>C#</li></ul></div>
+          <div class="skill-group"><h3>Databases</h3><ul class="tags"><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>Supabase</li><li>Firebase</li></ul></div>
+          <div class="skill-group"><h3>DevOps and tools</h3><ul class="tags"><li>Docker</li><li>Virtual machines</li><li>VMware</li><li>Git</li><li>GitHub</li></ul></div>
+          <div class="skill-group"><h3>Security</h3><ul class="tags"><li>CTF challenges</li><li>Security tools</li><li>Server monitoring</li></ul></div>
+          <div class="skill-group"><h3>Design and content</h3><ul class="tags"><li>Figma</li><li>GIMP</li><li>WordPress</li><li>Microsoft Office</li><li>Tech videos and posts</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="head">
+          <h2>Education</h2>
+          <p>Formal study, languages and the habits that keep my problem-solving sharp.</p>
+        </div>
+        <div class="edu">
+          <div class="panel">
+            <h3>Engineering degree in Computer Science</h3>
+            <p>Cybersecurity specialization</p>
+            <p>École Supérieure en Informatique 08 Mai 1945, Sidi Bel Abbès</p>
+            <p class="num">2023 to expected 2028</p>
+          </div>
+          <div class="panel">
+            <h3>Languages</h3>
+            <dl class="langs">
+              <div><dt>Arabic</dt><dd>Native</dd></div>
+              <div><dt>French</dt><dd>Fluent</dd></div>
+              <div><dt>English</dt><dd>Fluent</dd></div>
+              <div><dt>Italian</dt><dd>Beginner</dd></div>
+            </dl>
+          </div>
+          <div class="panel">
+            <h3>Away from the keyboard</h3>
+            <p>Chess since 2014, Shogi, the Rubik’s Cube and capture-the-flag competitions. Strategy puzzles are good practice for debugging and for thinking like an attacker.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-close" id="contact">
+      <div class="container contact-layout">
+        <div>
+          <div class="head" style="grid-template-columns:minmax(0,1fr); margin-bottom:var(--space-lg);">
+            <h2>Start a conversation</h2>
+            <p>I take on freelance projects, remote roles and internships. Send a short description of what you need and I will reply by email.</p>
+          </div>
+          <div class="actions">
+            <a class="btn" href="mailto:webbymouad@gmail.com">Write an email</a>
+            <a class="btn btn-line" href="https://www.linkedin.com/in/mouad-a-78b2442a8/" target="_blank" rel="noopener">Open LinkedIn</a>
+          </div>
+        </div>
+        <dl class="reach">
+          <div><dt>Email</dt><dd data-copy-source>webbymouad@gmail.com</dd><dd><button class="btn btn-quiet" type="button" data-copy="webbymouad@gmail.com">Copy</button></dd></div>
+          <div><dt>Phone</dt><dd data-copy-source>+213 558 07 08 74</dd><dd><button class="btn btn-quiet" type="button" data-copy="+213558070874">Copy</button></dd></div>
+          <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/mouad-a-78b2442a8/" target="_blank" rel="noopener">mouad-a-78b2442a8</a></dd><dd></dd></div>
+          <div><dt>Location</dt><dd>Constantine, Algeria</dd><dd></dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container statement">
+      <p class="big">Build the product. Check what can break.</p>
+      <p class="small">Mouaad Allouche, <span id="year">2026</span>. Full-stack developer and cybersecurity student. <a href="mailto:webbymouad@gmail.com">webbymouad@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var root = document.documentElement;
+    var themeBtn = document.getElementById('theme');
+    function current() {
+      var t = root.getAttribute('data-theme');
+      if (t) return t;
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function paintLabel() {
+      if (!themeBtn) return;
+      themeBtn.textContent = current() === 'dark' ? 'Light mode' : 'Dark mode';
+    }
+    try {
+      var saved = localStorage.getItem('portfolio-theme');
+      if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
+    } catch (e) {}
+    paintLabel();
+    if (themeBtn) themeBtn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('portfolio-theme', next); } catch (e) {}
+      paintLabel();
+      drawScan(true);
+    });
+
+    var chips = document.querySelectorAll('.chip[data-filter]');
+    var cards = document.querySelectorAll('#project-grid .ledger-row');
+    var count = document.getElementById('count');
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        var f = chip.getAttribute('data-filter');
+        chips.forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+        var shown = 0;
+        cards.forEach(function (card) {
+          var tags = (card.getAttribute('data-tags') || '').split(' ');
+          var show = f === 'all' || tags.indexOf(f) !== -1;
+          card.hidden = !show;
+          if (show) shown++;
+        });
+        if (count) count.textContent = 'Showing ' + shown + ' of ' + cards.length + ' projects';
+      });
+    });
+
+    document.querySelectorAll('[data-copy]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var text = btn.getAttribute('data-copy');
+        var original = btn.textContent;
+        function flash(msg) { btn.textContent = msg; setTimeout(function () { btn.textContent = original; }, 1800); }
+        function selectText() {
+          var src = btn.parentNode && btn.parentNode.parentNode ? btn.parentNode.parentNode.querySelector('[data-copy-source]') : null;
+          if (!src) return;
+          var range = document.createRange();
+          range.selectNodeContents(src);
+          var sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+          flash('Selected');
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () { flash('Copied'); }, selectText);
+        } else { selectText(); }
+      });
+    });
+
+    var y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+
+    var canvas = document.getElementById('scan-canvas');
+    var ctx = canvas && canvas.getContext ? canvas.getContext('2d') : null;
+    var pts = [], raf = 0, running = false, seen = false, start = 0;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function cssVar(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+    function resize() {
+      if (!canvas || !ctx) return;
+      var r = canvas.getBoundingClientRect();
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.max(1, Math.floor(r.width * dpr));
+      canvas.height = Math.max(1, Math.floor(r.height * dpr));
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function makePoints() {
+      pts = [];
+      if (!canvas) return;
+      var r = canvas.getBoundingClientRect(), w = r.width, h = r.height, n = Math.floor(Math.min(1400, Math.max(500, (w * h) / 900)));
+      for (var i = 0; i < n; i++) {
+        var x = Math.random() * w, y = Math.random() * h;
+        var cx = (x / w - 0.62) * 1.4, cy = (y / h - 0.45) * 1.2;
+        var field = Math.sin(cx * 7.2) * Math.cos(cy * 6.4) + Math.sin((cx + cy) * 4.2) * 0.35;
+        var keep = Math.random() < (0.22 + Math.max(0, field) * 0.55);
+        if (!keep) continue;
+        pts.push({ x: x, y: y, z: 0.25 + Math.random() * 0.75, h: 0.15 + Math.max(0, field) * 0.85, f: Math.random() < 0.012 });
+      }
+    }
+    function color(h, found, hi) {
+      var lo = cssVar('--point-lo') || 'oklch(42% 0.04 245)';
+      var mid = cssVar('--point-mid') || 'oklch(70% 0.04 232)';
+      var ph = cssVar('--point-hi') || 'oklch(96% 0.02 215)';
+      var acc = cssVar('--color-accent') || 'oklch(89% 0.19 126)';
+      if (found) return acc;
+      if (hi > 0.65) return 'color-mix(in oklab, ' + ph + ' ' + Math.round(hi * 100) + '%, ' + mid + ')';
+      if (h > 0.55) return 'color-mix(in oklab, ' + mid + ' ' + Math.round(h * 100) + '%, ' + lo + ')';
+      return lo;
+    }
+    function drawScan(force) {
+      if (!canvas || !ctx) return;
+      resize(); makePoints();
+      if (!start) start = performance.now();
+      if (force || reduce) { render(reduce ? start + 2600 : performance.now(), true); }
+    }
+    function render(now, once) {
+      if (!canvas || !ctx) return;
+      var r = canvas.getBoundingClientRect(), w = r.width, h = r.height;
+      ctx.clearRect(0, 0, w, h);
+      var t = (now - start) / 1000;
+      var sweep = reduce ? w * 0.58 : ((t * w * 0.11) % (w + 180)) - 90;
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i];
+        var d = Math.abs(p.x - sweep);
+        var hi = d < 90 ? (1 - d / 90) : 0;
+        var alpha = (0.18 + p.h * 0.45 + hi * 0.35) * (0.55 + p.z * 0.45);
+        var size = 0.8 + p.z * 1.4 + hi * 0.9;
+        ctx.globalAlpha = Math.min(0.95, alpha);
+        ctx.fillStyle = color(p.h, p.f && (hi > 0.15 || reduce), hi);
+        ctx.fillRect(p.x, p.y, size, size);
+      }
+      ctx.globalAlpha = 1;
+      if (!once && running && !reduce) raf = requestAnimationFrame(render);
+    }
+    function sync() {
+      var run = seen && !reduce;
+      if (run && !running) { running = true; start = start || performance.now(); raf = requestAnimationFrame(render); }
+      if (!run && running) { running = false; cancelAnimationFrame(raf); drawScan(true); }
+      if (reduce) drawScan(true);
+    }
+    if (canvas && ctx) {
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) { seen = entries[0].isIntersecting; sync(); }).observe(canvas);
+      } else { seen = true; }
+      window.addEventListener('resize', function () { drawScan(true); if (running) return; render(performance.now(), true); });
+      drawScan(true); sync();
+    }
+  })();
+  </script>
+</body>
+</html>
