@@ -1,0 +1,676 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Mouaad Allouche</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: sticky slim bar, left-aligned hero with a chessboard carrying the stack (the one bold move),
+   then quiet alternating bands: about, projects (filterable), experience timeline, competitions, skills, education, contact. */
+:root {
+  --bg: #EEF1F5;
+  --surface: #FFFFFF;
+  --surface-2: #E3E9F1;
+  --ink: #0E1626;
+  --muted: #4F5C75;
+  --line: #CBD3E0;
+  --accent: #2342E8;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #DDE3FF;
+  --gold: #F2B01E;
+  --gold-ink: #1A1300;
+  --ok: #1F9D63;
+  --band-bg: #0E1626;
+  --band-fg: #EEF1F5;
+  --band-muted: #A9B4CC;
+  --band-line: #2A3752;
+  --band-accent: #9FB0FF;
+  --sq-a: #FFFFFF;
+  --sq-b: #D6DEEB;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0A1020; --surface: #121A2E; --surface-2: #1A2540; --ink: #E8ECF5; --muted: #9AA6BF; --line: #26334F;
+    --accent: #93A5FF; --accent-ink: #0A1020; --accent-soft: #1E2A52; --ok: #3DCB8A;
+    --band-bg: #121A2E; --band-fg: #E8ECF5; --band-muted: #9AA6BF; --band-line: #26334F; --band-accent: #93A5FF;
+    --sq-a: #16203A; --sq-b: #0E1629;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0A1020; --surface: #121A2E; --surface-2: #1A2540; --ink: #E8ECF5; --muted: #9AA6BF; --line: #26334F;
+  --accent: #93A5FF; --accent-ink: #0A1020; --accent-soft: #1E2A52; --ok: #3DCB8A;
+  --band-bg: #121A2E; --band-fg: #E8ECF5; --band-muted: #9AA6BF; --band-line: #26334F; --band-accent: #93A5FF;
+  --sq-a: #16203A; --sq-b: #0E1629;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-padding-top: 76px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg);
+}
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; margin: 0; text-wrap: balance; letter-spacing: -0.015em; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+ul { margin: 0; padding: 0; list-style: none; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+.wrap {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.skip { position: absolute; left: 16px; top: -60px; background: var(--ink); color: var(--bg); padding: 8px 14px; border-radius: 8px; z-index: 40; }
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + 8px); }
+
+/* Header */
+.site-header {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+@supports (background: color-mix(in srgb, red 50%, blue)) {
+  .site-header { background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(10px); }
+}
+.bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 20px; padding-block: 10px; }
+.brand { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+.bar nav { order: 3; width: 100%; min-width: 0; overflow-x: auto; }
+.links { display: flex; gap: 4px; white-space: nowrap; }
+.links a { display: block; padding: 6px 12px; border-radius: 999px; color: var(--muted); text-decoration: none; font-size: 0.9375rem; font-weight: 500; }
+.links a:hover { background: var(--surface-2); color: var(--ink); }
+@media (min-width: 880px) {
+  .bar nav { order: 0; width: auto; flex: 1; overflow: visible; margin-left: 16px; }
+}
+.btn-ghost {
+  font: 500 0.875rem var(--font-body); color: var(--ink); background: transparent; border: 1px solid var(--line);
+  padding: 7px 14px; border-radius: 999px; cursor: pointer;
+}
+.btn-ghost:hover { background: var(--surface-2); }
+
+/* Buttons */
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block; padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none;
+  color: var(--ink); background: var(--surface); border: 1px solid var(--line);
+}
+.btn:hover { border-color: var(--ink); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn.primary:hover { filter: brightness(1.08); }
+
+/* Hero */
+.hero { padding-block: clamp(36px, 7vw, 88px) clamp(44px, 7vw, 96px); }
+.hero-grid { display: grid; gap: 40px; align-items: center; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); }
+@media (max-width: 880px) { .hero-grid { grid-template-columns: minmax(0, 1fr); } }
+.status {
+  display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px 6px 12px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); margin-bottom: 22px;
+}
+.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ok); flex: none; }
+h1 { font-size: clamp(2.4rem, 5.6vw, 4.2rem); font-weight: 700; line-height: 1.02; letter-spacing: -0.03em; max-width: 15ch; }
+.lead { margin-top: 22px; font-size: 1.1875rem; color: var(--muted); max-width: 54ch; }
+.hero .actions { margin-top: 32px; }
+
+/* Board */
+.board-fig { margin: 0; justify-self: center; width: 100%; max-width: 440px; }
+.board-wrap { display: grid; grid-template-columns: 18px minmax(0, 1fr); grid-template-areas: "r b" ". f"; gap: 6px; }
+.ranks { grid-area: r; display: grid; grid-template-rows: repeat(8, 1fr); font: 400 0.7rem var(--font-mono); color: var(--muted); text-align: center; }
+.ranks span { display: grid; place-items: center; }
+.files { grid-area: f; display: grid; grid-template-columns: repeat(8, 1fr); font: 400 0.7rem var(--font-mono); color: var(--muted); text-align: center; }
+.board {
+  grid-area: b; position: relative; aspect-ratio: 1; container-type: inline-size;
+  border-radius: 10px; overflow: hidden; border: 1px solid var(--line);
+  background-image: conic-gradient(var(--sq-b) 25%, var(--sq-a) 0 50%, var(--sq-b) 0 75%, var(--sq-a) 0);
+  background-size: 25% 25%;
+}
+.pieces { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(8, 1fr); }
+.piece {
+  margin: 11%; border-radius: 50%; display: grid; place-items: center;
+  background: var(--accent); color: var(--accent-ink);
+  font: 500 0.7rem/1 var(--font-mono); font-size: 3cqw; cursor: default;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.18);
+}
+.piece.alt { background: var(--surface); color: var(--accent); border: 2px solid var(--accent); }
+.board-fig figcaption { margin-top: 14px; font-size: 0.875rem; color: var(--muted); }
+
+/* Sections */
+.section { padding-block: clamp(56px, 8vw, 100px); }
+.band { background: var(--surface); border-block: 1px solid var(--line); }
+.sec-head { display: grid; gap: 12px; margin-bottom: 36px; max-width: 62ch; }
+h2 { font-size: clamp(1.75rem, 3.6vw, 2.6rem); font-weight: 700; }
+.sec-head p { color: var(--muted); font-size: 1.0625rem; }
+
+/* About */
+.about-grid { display: grid; gap: 48px; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); align-items: start; }
+@media (max-width: 880px) { .about-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; } }
+.about-text { display: grid; gap: 18px; font-size: 1.125rem; max-width: 62ch; }
+.facts { display: grid; gap: 0; margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.facts div { display: grid; gap: 2px; padding: 14px 18px; border-top: 1px solid var(--line); }
+.facts div:first-child { border-top: 0; }
+.facts dt { font-size: 0.8125rem; color: var(--muted); }
+.facts dd { margin: 0; font-weight: 500; }
+
+/* Projects */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.chip {
+  font: 500 0.9rem var(--font-body); color: var(--ink); background: var(--surface); border: 1px solid var(--line);
+  padding: 8px 16px; border-radius: 999px; cursor: pointer;
+}
+.chip:hover { border-color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.count { font-size: 0.875rem; color: var(--muted); margin-bottom: 22px; }
+.grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
+.card {
+  display: flex; flex-direction: column; gap: 14px; min-width: 0; padding: 24px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+}
+.card-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.role { font-size: 0.875rem; color: var(--muted); }
+.pill { font-size: 0.78rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); display: inline-flex; align-items: center; gap: 6px; }
+.pill.live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ok); }
+.pill.gold { background: var(--gold); border-color: var(--gold); color: var(--gold-ink); }
+.card h3 { font-size: 1.3125rem; font-weight: 650; letter-spacing: -0.01em; }
+.card p { color: var(--muted); font-size: 0.975rem; }
+.card-foot { margin-top: auto; display: grid; gap: 14px; padding-top: 4px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tags li { font: 400 0.78rem/1 var(--font-mono); padding: 6px 9px; border-radius: 6px; background: var(--surface-2); color: var(--ink); }
+.card-links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-weight: 600; font-size: 0.95rem; }
+
+/* Timeline */
+.timeline { display: grid; }
+.t-item { display: grid; gap: 8px 32px; grid-template-columns: 210px minmax(0, 1fr); padding-block: 26px; border-top: 1px solid var(--line); }
+.t-item:last-child { border-bottom: 1px solid var(--line); }
+@media (max-width: 720px) { .t-item { grid-template-columns: minmax(0, 1fr); } }
+.t-date { font: 400 0.875rem/1.6 var(--font-mono); color: var(--muted); padding-top: 4px; }
+.t-body { display: grid; gap: 10px; min-width: 0; }
+.t-body h3 { font-size: 1.375rem; font-weight: 650; }
+.t-org { color: var(--muted); font-weight: 500; }
+.t-body ul { display: grid; gap: 8px; margin-top: 4px; }
+.t-body li { position: relative; padding-left: 20px; max-width: 70ch; }
+.t-body li::before { content: ""; position: absolute; left: 2px; top: 0.72em; width: 8px; height: 2px; background: var(--accent); }
+
+/* Competitions */
+.wins { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
+.win { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 20px; padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; align-items: start; }
+.rank {
+  width: 76px; height: 76px; border-radius: 12px; display: grid; place-items: center;
+  font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; letter-spacing: -0.02em;
+  background: var(--surface-2); color: var(--ink);
+}
+.rank.gold { background: var(--gold); color: var(--gold-ink); }
+.win h3 { font-size: 1.1875rem; font-weight: 650; }
+.win .meta { font-size: 0.875rem; color: var(--muted); margin-top: 2px; }
+.win p { margin-top: 10px; color: var(--muted); font-size: 0.975rem; }
+@media (max-width: 420px) { .win { grid-template-columns: minmax(0, 1fr); } }
+
+/* Skills */
+.skills { display: grid; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--bg); }
+.srow { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 12px 28px; padding: 20px 24px; border-top: 1px solid var(--line); align-items: start; }
+.srow:first-child { border-top: 0; }
+.srow h3 { font-size: 1.0625rem; font-weight: 650; font-family: var(--font-body); letter-spacing: 0; padding-top: 4px; }
+.srow .tags li { font-size: 0.82rem; padding: 7px 10px; background: var(--surface); border: 1px solid var(--line); }
+@media (max-width: 720px) { .srow { grid-template-columns: minmax(0, 1fr); } }
+
+/* Education */
+.edu-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
+.panel { padding: 26px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; display: grid; gap: 10px; align-content: start; }
+.panel h3 { font-size: 1.25rem; font-weight: 650; }
+.panel .muted { color: var(--muted); }
+.langs { display: grid; gap: 6px; }
+.langs div { display: flex; justify-content: space-between; gap: 16px; padding-block: 6px; border-top: 1px solid var(--line); }
+.langs div:first-child { border-top: 0; }
+.langs dt { font-weight: 500; }
+.langs dd { margin: 0; color: var(--muted); }
+
+/* Contact */
+.contact { background: var(--band-bg); color: var(--band-fg); padding-block: clamp(56px, 8vw, 100px); }
+.contact a { color: var(--band-accent); }
+.contact-grid { display: grid; gap: 48px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+@media (max-width: 880px) { .contact-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; } }
+.contact h2 { font-size: clamp(1.9rem, 4vw, 2.9rem); max-width: 16ch; }
+.contact .copy-text { margin-top: 16px; color: var(--band-muted); font-size: 1.0625rem; max-width: 48ch; }
+.contact .actions { margin-top: 28px; }
+.contact .btn.primary { background: var(--band-accent); border-color: var(--band-accent); color: var(--band-bg); }
+.contact .btn { background: transparent; color: var(--band-fg); border-color: var(--band-line); }
+.contact .btn.primary:hover, .contact .btn:hover { border-color: var(--band-fg); }
+.reach { display: grid; margin: 0; border: 1px solid var(--band-line); border-radius: 14px; overflow: hidden; }
+.reach > div { display: grid; grid-template-columns: 90px minmax(0, 1fr) auto; gap: 8px 16px; align-items: center; padding: 16px 20px; border-top: 1px solid var(--band-line); }
+.reach > div:first-child { border-top: 0; }
+.reach dt { color: var(--band-muted); font-size: 0.875rem; }
+.reach dd { margin: 0; font-weight: 500; overflow-wrap: anywhere; }
+.reach .btn-ghost { color: var(--band-fg); border-color: var(--band-line); }
+.reach .btn-ghost:hover { background: var(--band-line); }
+@media (max-width: 480px) { .reach > div { grid-template-columns: minmax(0, 1fr) auto; } .reach dt { grid-column: 1 / -1; } }
+
+.foot { background: var(--band-bg); color: var(--band-muted); border-top: 1px solid var(--band-line); padding-block: 22px calc(22px + env(safe-area-inset-bottom, 0px)); font-size: 0.875rem; }
+.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+</style>
+
+<a class="skip" href="#about">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top">Mouaad Allouche</a>
+    <nav aria-label="Sections">
+      <ul class="links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#competitions">Competitions</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="btn-ghost" id="theme" type="button">Dark mode</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="status"><span class="dot" aria-hidden="true"></span>Open to freelance work, remote roles and internships</p>
+        <h1>I build full-stack products and I'm learning to secure them.</h1>
+        <p class="lead">I'm a full-stack developer and cybersecurity engineering student in Constantine, Algeria. I ship web and mobile apps with React, Next.js and Node.js, and I lead the technical team at Ingeniums Club.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">See my projects</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+
+      <figure class="board-fig">
+        <div class="board-wrap">
+          <div class="ranks" aria-hidden="true"><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span></div>
+          <div class="board" role="img" aria-label="A chessboard with eight technologies placed on its squares">
+            <div class="pieces">
+              <span class="piece" style="grid-area: 5 / 5" title="Next.js (e4)">Nx</span>
+              <span class="piece alt" style="grid-area: 4 / 4" title="React (d5)">Re</span>
+              <span class="piece" style="grid-area: 6 / 6" title="Node.js (f3)">No</span>
+              <span class="piece alt" style="grid-area: 3 / 3" title="TypeScript (c6)">TS</span>
+              <span class="piece" style="grid-area: 2 / 7" title="PostgreSQL (g7)">Pg</span>
+              <span class="piece alt" style="grid-area: 7 / 2" title="Docker (b2)">Dk</span>
+              <span class="piece" style="grid-area: 5 / 8" title="Python (h4)">Py</span>
+              <span class="piece alt" style="grid-area: 4 / 1" title="JavaScript (a5)">JS</span>
+            </div>
+          </div>
+          <div class="files" aria-hidden="true"><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span></div>
+        </div>
+        <figcaption>My daily stack on a board: Next.js, React, Node.js, TypeScript, PostgreSQL, Docker, Python and JavaScript. I've played chess since 2014.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section band" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <div class="sec-head"><h2>About me</h2></div>
+        <div class="about-text">
+          <p>I'm a full-stack developer from Constantine. JavaScript and TypeScript are my main tools: React and Next.js on the front end, Node.js and Express with PostgreSQL or MongoDB behind them, and React Native when an app needs to be mobile.</p>
+          <p>I study cybersecurity engineering at ESI Sidi Bel Abbès, which changes how I build. I think about authentication, data exposure and monitoring from the first commit. Outside class I play CTFs, lead the technical team at Ingeniums Club and make tech content on social media.</p>
+        </div>
+      </div>
+      <dl class="facts">
+        <div><dt>Based in</dt><dd>Constantine, Algeria</dd></div>
+        <div><dt>Studying</dt><dd>Cybersecurity engineering, ESI Sidi Bel Abbès (2028)</dd></div>
+        <div><dt>Leading</dt><dd>Technical team, Ingeniums Club</dd></div>
+        <div><dt>Languages</dt><dd>Arabic, French, English, Italian</dd></div>
+        <div><dt>Available for</dt><dd>Remote freelance work, remote jobs, internships</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Projects</h2>
+        <p>Web and mobile products I've built, from online stores to exam management. Two more are in development.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-filter="full" aria-pressed="false">Full-stack</button>
+        <button class="chip" type="button" data-filter="frontend" aria-pressed="false">Front end</button>
+        <button class="chip" type="button" data-filter="security" aria-pressed="false">Security</button>
+        <button class="chip" type="button" data-filter="dev" aria-pressed="false">In development</button>
+      </div>
+      <p class="count" id="count" aria-live="polite">Showing 9 of 9 projects</p>
+
+      <div class="grid" id="project-grid">
+        <article class="card" data-tags="full">
+          <div class="card-top"><span class="role">Full-stack developer</span><span class="pill live">Live</span></div>
+          <h3>PC Store, full-stack e-commerce platform</h3>
+          <p>A responsive storefront with product search, filters, cart and checkout, plus an admin panel for products, stock, orders, delivery, and sales and purchase tracking.</p>
+          <div class="card-foot">
+            <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>Express.js</li><li>PostgreSQL</li><li>Prisma</li><li>JWT</li></ul>
+            <div class="card-links"><a href="https://pcfront-s6yz.vercel.app/" target="_blank" rel="noopener">Open the store</a><a href="https://pcfront-s6yz.vercel.app/admin" target="_blank" rel="noopener">Open the admin panel</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="frontend">
+          <div class="card-top"><span class="role">Front-end developer, team of several</span><span class="pill gold">3rd place, DevFest 2025</span></div>
+          <h3>AI-powered student life management app</h3>
+          <p>A platform that gives university students their lectures, study materials, assignments and schedules in one place, with an AI chatbot and a time-management system. I built the admin dashboard and the student mobile app.</p>
+          <div class="card-foot">
+            <ul class="tags"><li>Next.js</li><li>React Native</li><li>WebView</li><li>TypeScript</li><li>OpenAI API</li><li>MongoDB</li><li>Django</li></ul>
+          </div>
+        </article>
+
+        <article class="card" data-tags="frontend security">
+          <div class="card-top"><span class="role">Front-end developer, team project</span></div>
+          <h3>Doctoral examination management platform</h3>
+          <p>An admin dashboard for running doctoral entrance exams across specialities, paired with an exam-day mobile app. QR codes and encrypted identifiers link candidates to papers for anonymous correction, and the codes change before marking to prevent tampering. I built the dashboard.</p>
+          <div class="card-foot">
+            <ul class="tags"><li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>REST API</li><li>QR codes</li></ul>
+          </div>
+        </article>
+
+        <article class="card" data-tags="frontend">
+          <div class="card-top"><span class="role">Front-end developer, team project</span></div>
+          <h3>Daycare management platform</h3>
+          <p>A web dashboard for daycare administrators and a mobile app for parents, covering child profiles, daily reports, dietary needs, notes and announcements. I built the admin dashboard and the landing page, including 3D models.</p>
+          <div class="card-foot">
+            <ul class="tags"><li>React</li><li>Tailwind CSS</li><li>Express.js</li><li>MongoDB</li><li>Flutter</li></ul>
+          </div>
+        </article>
+
+        <article class="card" data-tags="full">
+          <div class="card-top"><span class="role">Full-stack developer</span></div>
+          <h3>Cloud file storage and sharing platform</h3>
+          <p>A Drive-style app where users sign in securely, upload files, organize them in folders, download them and share them with other people.</p>
+          <div class="card-foot">
+            <ul class="tags"><li>React</li><li>Tailwind CSS</li><li>Node.js</li><li>Express.js</li><li>PostgreSQL</li></ul>
+          </div>
+        </article>
+
+        <article class="card" data-tags="full">
+          <div class="card-top"><span class="role">Full-stack developer, solo project</span></div>
+          <h3>Blog and content sharing platform</h3>
+          <p>A blogging platform with registration and login, where users publish and edit posts, comment on articles and save their favorites for later.</p>
+          <div class="card-foot">
+            <ul class="tags"><li>React</li><li>Tailwind CSS</li><li>Node.js</li><li>Express.js</li><li>PostgreSQL</li></ul>
+          </div>
+        </article>
+
+        <article class="card" data-tags="full">
+          <div class="card-top"><span class="role">Full-stack developer, solo project</span></div>
+          <h3>Anime community blog</h3>
+          <p>A blog where fans read, comment and post using only a display name. I designed the identity logic so people who share a name stay correctly attributed without accounts.</p>
+          <div class="card-foot">
+            <ul class="tags"><li>React</li><li>Tailwind CSS</li><li>Node.js</li><li>Express.js</li><li>PostgreSQL</li></ul>
+          </div>
+        </article>
+
+        <article class="card" data-tags="full dev">
+          <div class="card-top"><span class="role">Full-stack developer</span><span class="pill">In development</span></div>
+          <h3>Travel agency platform</h3>
+          <p>A platform for planning trips and exploring destinations, built to bring a travel agency's services and information together in one place.</p>
+          <div class="card-foot">
+            <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>Node.js</li><li>Express.js</li></ul>
+          </div>
+        </article>
+
+        <article class="card" data-tags="security dev">
+          <div class="card-top"><span class="role">Developer, security</span><span class="pill">In development</span></div>
+          <h3>Server monitoring and attack detection tool</h3>
+          <p>A tool that watches full server activity, detects cyber attacks and responds to them. It puts what I'm studying in cybersecurity into a working system.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" id="experience">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Experience</h2>
+        <p>Client work, a club leadership role and community volunteering.</p>
+      </div>
+      <div class="timeline">
+        <div class="t-item">
+          <div class="t-date">2025 – Present</div>
+          <div class="t-body">
+            <h3>Technical Team Leader</h3>
+            <p class="t-org">Ingeniums Club, ESI Sidi Bel Abbès</p>
+            <ul>
+              <li>Lead the club's technical team and plan its events, including CTF workshops and the MiniCTF in November 2026.</li>
+              <li>Helped organize ESI Showcase (2025), where seniors present their projects and advise new and junior students.</li>
+              <li>Helped organize InGeHack (2025), one of the biggest CTF competitions in Algeria, held in Algiers.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">Sep 2024 – May 2025</div>
+          <div class="t-body">
+            <h3>Volunteer, events and sponsorship</h3>
+            <p class="t-org">GDG SBA</p>
+            <ul><li>Helped run club events and find sponsors throughout the year.</li></ul>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">Dec 2023 – Present</div>
+          <div class="t-body">
+            <h3>Full Stack Developer</h3>
+            <p class="t-org">Khamsat (freelance)</p>
+            <ul><li>Build full-stack web apps for clients.</li></ul>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">Jun 2022 – Jan 2024</div>
+          <div class="t-body">
+            <h3>Front-End Web Developer</h3>
+            <p class="t-org">Upwork (freelance)</p>
+            <ul><li>Built front-end websites for freelance clients.</li></ul>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-date">Apr 2022 – Present</div>
+          <div class="t-body">
+            <h3>Self-employed developer</h3>
+            <p class="t-org">Independent</p>
+            <ul><li>Build and ship something every day. Client work includes e-commerce stores and showcase websites.</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="competitions">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Hackathons and CTFs</h2>
+        <p>Three hackathons in 2025, two of them podium or near-podium finishes, plus CTFs played solo.</p>
+      </div>
+      <div class="wins">
+        <article class="win">
+          <div class="rank gold">3rd</div>
+          <div>
+            <h3>GDG DevFest Batna</h3>
+            <p class="meta">2025, team entry</p>
+            <p>We built a mobile app and web dashboard that help students plan their time, with AI-generated plans, courses, notes and a chatbot.</p>
+          </div>
+        </article>
+        <article class="win">
+          <div class="rank gold">4th</div>
+          <div>
+            <h3>Expo Excel datathon, hosted by Yassir</h3>
+            <p class="meta">2025, team entry</p>
+            <p>Our team finished fourth despite having no earlier experience in training AI models.</p>
+          </div>
+        </article>
+        <article class="win">
+          <div class="rank">Team</div>
+          <div>
+            <h3>Algérie 2.0 hackathon</h3>
+            <p class="meta">2025, team entry</p>
+            <p>We built a B2B platform with an admin dashboard for web and mobile.</p>
+          </div>
+        </article>
+        <article class="win">
+          <div class="rank">CTF</div>
+          <div>
+            <h3>Capture the flag, solo</h3>
+            <p class="meta">Events listed on CTFtime</p>
+            <p>I play online CTFs on my own and finish around 5th to 10th place.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" id="skills">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Skills</h2>
+        <p>What I use to build and ship, grouped by the part of the product it belongs to.</p>
+      </div>
+      <div class="skills">
+        <div class="srow"><h3>Front end</h3><ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>Tailwind CSS</li><li>Bootstrap</li><li>shadcn/ui</li><li>Vite</li></ul></div>
+        <div class="srow"><h3>Mobile and desktop</h3><ul class="tags"><li>React Native</li><li>Expo</li><li>Electron</li></ul></div>
+        <div class="srow"><h3>Back end</h3><ul class="tags"><li>Node.js</li><li>Express.js</li><li>REST APIs</li><li>Prisma</li><li>JWT</li><li>Python</li><li>PHP</li><li>Java</li><li>C#</li></ul></div>
+        <div class="srow"><h3>Databases</h3><ul class="tags"><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>Supabase</li><li>Firebase</li></ul></div>
+        <div class="srow"><h3>DevOps and tools</h3><ul class="tags"><li>Docker</li><li>Virtual machines</li><li>VMware</li><li>Git</li><li>GitHub</li></ul></div>
+        <div class="srow"><h3>Security</h3><ul class="tags"><li>CTF challenges</li><li>Security tools</li><li>Server monitoring</li></ul></div>
+        <div class="srow"><h3>Design and content</h3><ul class="tags"><li>Figma</li><li>GIMP</li><li>WordPress</li><li>Microsoft Office</li><li>Tech videos and posts</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="wrap">
+      <div class="sec-head"><h2>Education and languages</h2></div>
+      <div class="edu-grid">
+        <div class="panel">
+          <h3>Engineering degree in Computer Science</h3>
+          <p>Cybersecurity specialization</p>
+          <p class="muted">École Supérieure en Informatique 08 Mai 1945, Sidi Bel Abbès</p>
+          <p class="muted">2023 – expected 2028</p>
+        </div>
+        <div class="panel">
+          <h3>Languages</h3>
+          <dl class="langs" style="margin:0">
+            <div><dt>Arabic</dt><dd>Native</dd></div>
+            <div><dt>French</dt><dd>Fluent</dd></div>
+            <div><dt>English</dt><dd>Fluent</dd></div>
+            <div><dt>Italian</dt><dd>Beginner</dd></div>
+          </dl>
+        </div>
+        <div class="panel">
+          <h3>Away from the keyboard</h3>
+          <p class="muted">Chess since 2014, Shogi, the Rubik's Cube and capture-the-flag competitions. Strategy puzzles are good practice for debugging and for thinking like an attacker.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2>Have a project or an internship in mind?</h2>
+        <p class="copy-text">I take on freelance projects, remote roles and internships. Send a short description of what you need and I'll reply by email.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:webbymouad@gmail.com">Write an email</a>
+          <a class="btn" href="https://www.linkedin.com/in/mouad-a-78b2442a8/" target="_blank" rel="noopener">Open LinkedIn</a>
+        </div>
+      </div>
+      <dl class="reach">
+        <div><dt>Email</dt><dd data-copy-source>webbymouad@gmail.com</dd><button class="btn-ghost" type="button" data-copy="webbymouad@gmail.com">Copy</button></div>
+        <div><dt>Phone</dt><dd data-copy-source>+213 558 07 08 74</dd><button class="btn-ghost" type="button" data-copy="+213558070874">Copy</button></div>
+        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/mouad-a-78b2442a8/" target="_blank" rel="noopener">mouad-a-78b2442a8</a></dd><span></span></div>
+        <div><dt>Location</dt><dd>Constantine, Algeria</dd><span></span></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap"><span>© <span id="year">2026</span> Mouaad Allouche</span><span>Full-stack developer and cybersecurity student</span></div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('theme');
+  function current() {
+    var t = root.getAttribute('data-theme');
+    if (t) return t;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  function paintLabel() {
+    themeBtn.textContent = current() === 'dark' ? 'Light mode' : 'Dark mode';
+  }
+  try {
+    var saved = localStorage.getItem('portfolio-theme');
+    if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
+  } catch (e) {}
+  paintLabel();
+  themeBtn.addEventListener('click', function () {
+    var next = current() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('portfolio-theme', next); } catch (e) {}
+    paintLabel();
+  });
+
+  var chips = document.querySelectorAll('.chip');
+  var cards = document.querySelectorAll('#project-grid .card');
+  var count = document.getElementById('count');
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var f = chip.getAttribute('data-filter');
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+      var shown = 0;
+      cards.forEach(function (card) {
+        var tags = (card.getAttribute('data-tags') || '').split(' ');
+        var show = f === 'all' || tags.indexOf(f) !== -1;
+        card.hidden = !show;
+        if (show) shown++;
+      });
+      count.textContent = 'Showing ' + shown + ' of ' + cards.length + ' projects';
+    });
+  });
+
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      var original = btn.textContent;
+      function flash(msg) {
+        btn.textContent = msg;
+        setTimeout(function () { btn.textContent = original; }, 1800);
+      }
+      function selectText() {
+        var src = btn.parentNode.querySelector('[data-copy-source]');
+        if (!src) return;
+        var range = document.createRange();
+        range.selectNodeContents(src);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        flash('Selected');
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { flash('Copied'); }, selectText);
+      } else {
+        selectText();
+      }
+    });
+  });
+
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+})();
+</script>
+
+</body></html>
